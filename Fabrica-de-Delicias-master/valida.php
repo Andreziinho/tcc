@@ -58,23 +58,30 @@
                 break;
             case 'home2':
 
-                $funcionarios = $crud->getUsuarios();
+                $cpf = $crud->getUsuario($_POST['cpfFun']);
+                $usuarioAtivo = $cpf->getCpf();
                 $sorvetes     = $crud2->getSorvetes();
-                $fornecedores = $crud3->getFornecedores();
-
+                $crudSor = new CrudSorvete();
                 include "view/funcionarioSorvete.php";
                 break;
             case 'cadastroFun':
-                    if (strlen($_POST['senha']) < 8 ){
+                $cpf = $crud->getUsuario($_POST['cpf']);
+                $checa = $cpf->getCpf();
+                if ($_POST['cpf'] != $checa) {
+                    if (strlen($_POST['senha']) < 8) {
 
                         echo "<script>alert('Senha Insegura');</script>";
                         include "view/cadastro.php";
-                    }else {
+                    } else {
                         $funcionario = new Usuario($_POST['cpf'], $_POST['tipo_user'], $_POST['email'], $_POST['name'], $_POST['login'], $_POST['senha'], $_POST['telefone']);
                         $crud->insertUsuario($funcionario);
                         echo "<script>alert('Cadastro realizado');</script>";
                         include "view/cadastro.php";
                     }
+                }else{
+                    echo "<script>alert('Cpf já existente');</script>";
+                    include "view/cadastro.php";
+                }
                     break;
 
             case 'cadastroSor':
@@ -93,11 +100,17 @@
                     break;
 
             case 'cadastroFor':
-
-                $fornecedore =new Fornecedor($_POST['cnpj'],$_POST['nome'],$_POST['email'],$_POST['telefone']);
-                $crud3->insertFornecedor($fornecedore);
-                echo "<script>alert('Cadastro realizado');</script>";
-                include "view/cadastro.php";
+                $cnpj = $crud3->getFornecedor($_POST['cnpj']);
+                $checa = $cnpj->getCnpj();
+                if ($_POST['cnpj'] != $checa) {
+                    $fornecedore = new Fornecedor($_POST['cnpj'], $_POST['nome'], $_POST['email'], $_POST['telefone']);
+                    $crud3->insertFornecedor($fornecedore);
+                    echo "<script>alert('Cadastro realizado');</script>";
+                    include "view/cadastro.php";
+                }else{
+                    echo "<script>alert('Cnpj já existente');</script>";
+                    include "view/cadastro.php";
+                }
                 break;
 
             case 'retira' :
@@ -107,11 +120,15 @@
                     echo"<script language='javascript' type='text/javascript'>alert('Não a mais esse sorvete no estoque');</script>";
                     $sorvetes     = $crud2->getSorvetes();
                     $crudSor = new CrudSorvete();
+                    $cpf = $crud->getUsuario($_POST['cpfFun']);
+                    $usuarioAtivo = $cpf->getCpf();
                     include "view/funcionarioSorvete.php";
                 }else {
                     $crud2->retiraCaixa($retirar, $_POST['id']);
                     $sorvetes = $crud2->getSorvetes();
                     $crudSor = new CrudSorvete();
+                    $cpf = $crud->getUsuario($_POST['cpfFun']);
+                    $usuarioAtivo = $cpf->getCpf();
                     include "view/funcionarioSorvete.php";
                 }
                 break;
@@ -148,6 +165,7 @@
                     include "view/editarFor.php";
                 }elseif (isset($_POST['cpfFun'])){
                     $valores = $crud->getUsuario($_POST['cpfFun']);
+                    $usuarioAtivo = $valores->getCpf();
                     include "view/editaFunFun.php";
                 }
                 break;

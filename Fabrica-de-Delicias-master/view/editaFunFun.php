@@ -41,12 +41,13 @@
     <div id="abas" style="background-color: #426bbf;">
         <ul class="abas" style="padding-top: 5px; padding-left: 5px;">
             <div class="w3-bar w3-black">
-                <div class="form-row" style="margin-right: 1100">
+                <div class="form-row" style="margin-right: 1090px;">
                     <div class="form-group col-md-3" style="margin-right: 10px;">
-                        <a href="valida.php?acao=home2"><button class="btn btn-primary" style="color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">Voltar</button></a>
+<!--                        <a href="valida.php?acao=home2"><button class="btn btn-primary" style="color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">Voltar</button></a>-->
                     </div>
-                        <form action="valida.php?acao=editado" method="post">
+                        <form action="valida.php?acao=home2" method="post">
                             <input type="hidden" name="cpfFun" value="<?php echo $usuarioAtivo?>">
+                            <input type="submit" name="volta" value="voltar" class="btn btn-primary" style="color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">Contato</button>
                         </form>
                     </div>

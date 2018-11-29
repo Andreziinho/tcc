@@ -121,6 +121,7 @@
                                     <form action="valida.php?acao=retira" method="post">
                                         <input type="hidden" value="<?php echo $sorvete->getId()?>" name="id">
                                         <input type="hidden" value="<?php echo $sorvete->getQuant()?>" name="quanti">
+                                        <input type="hidden" value="<?php echo $usuarioAtivo?>" name="cpfFun">
                                         <button type="submit" class="btn btn-info" value="Retirar" >Retirar</button>
                                     </form>
                                 </div>
