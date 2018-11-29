@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Nov-2018 às 02:14
+-- Generation Time: 29-Nov-2018 às 06:39
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -59,6 +59,7 @@ INSERT INTO `fornecedor` (`nome`, `email`, `telefone`, `cnpj`) VALUES
 ('Paviloche', 'pavivi@gmail.com', 2147483647, ' 315334'),
 ('JundiÃ¡', 'jundia.sor@gmail.com', 468273482, ' 3515151'),
 ('Freddo', 'freedo@gmail.com', 839273929, ' 366243'),
+('Piccole', 'piccc@gmail.com', 2147483647, ' 432671'),
 ('Ice Mellow', 'immell@gmail.com', 2147483647, ' 5318571');
 
 -- --------------------------------------------------------
@@ -83,9 +84,9 @@ CREATE TABLE `sorvete` (
 --
 
 INSERT INTO `sorvete` (`nomeSor`, `sabor`, `quantidade`, `validade`, `id`, `dt_ent_es`, `for_cnpj`, `user_cpf`) VALUES
-('MaracujÃ¡', 'Maracuja', 20, 2020, 30, 2018, ' 163614', '10848256948'),
-('Uva', 'Uva', 38, 2019, 33, 2018, ' 315334', '13896952789'),
-('Marta Rocha', 'MaracujÃ¡ e Leite Condensado', 40, 2020, 34, 2019, ' 315334', '10848256948');
+('MaracujÃ¡', 'Maracuja', 19, 2020, 30, 2018, ' 163614', '10848256948'),
+('Uva', 'Uva', 35, 2019, 33, 2018, ' 315334', '13896952789'),
+('Marta Rocha', 'MaracujÃ¡ e Leite Condensado', 38, 2020, 34, 2019, ' 315334', '10848256948');
 
 -- --------------------------------------------------------
 

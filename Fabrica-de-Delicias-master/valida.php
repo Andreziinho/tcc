@@ -56,6 +56,14 @@
 
                 include "view/gerenteSorvete.php";
                 break;
+            case 'home2':
+
+                $funcionarios = $crud->getUsuarios();
+                $sorvetes     = $crud2->getSorvetes();
+                $fornecedores = $crud3->getFornecedores();
+
+                include "view/funcionarioSorvete.php";
+                break;
             case 'cadastroFun':
                     if (strlen($_POST['senha']) < 8 ){
 

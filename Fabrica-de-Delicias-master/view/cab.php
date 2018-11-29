@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #426bbf!important;">
-    <a class="navbar-brand" href="valida.php?acao=home" style="font-family: cursive; font-size: 30px; color: white;">Fábrica de Delícias</a>
+    <a class="navbar-brand" style="font-family: cursive; font-size: 30px; color: white;">Fábrica de Delícias</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,12 +21,10 @@
 
 <div class="AbasControli" style="margin-bottom: 30px;">
     <div id="abas" style="background-color: #426bbf;">
-        <ul class="abas" style=" padding-top: 5px; padding-left: 5px;">
+        <ul class="abas">
             <div class="w3-bar w3-black">
-                <button class="btn btn-primary" onclick="openAba('fun')" style="background-color: #83acff!important;">Funcionario</button>
-                <button class="btn btn-primary" onclick="openAba('sor')" style="background-color: #83acff!important;">Sorvete</button>
-                <button class="btn btn-primary" onclick="openAba('for')" style="background-color: #83acff!important;">Fornecedor</button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #83acff!important;">Contato</button>
+                <a href="valida.php?acao=home" ><button class="btn btn-primary" style="margin-left: -35px;color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">Voltar</button></a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">Contato</button>
             </div>
             <br>
             <!-- Button trigger modal -->

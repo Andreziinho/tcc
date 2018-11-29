@@ -5,33 +5,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../style.css">
     <title>Funcionario Pagina</title>
+    <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" >
+    <style>
+        body{
+            background-image: url("img/body3.jpg");
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #426bbf!important;">
-    <a class="navbar-brand" style="font-family: cursive; font-size: 30px; color: white;">Fábrica de Delícias</a>
+    <a class="navbar-brand" href="#" style="font-family: cursive; font-size: 30px;">Fábrica de Delícias</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbar1">
+        <ul class="navbar-nav ml-auto">
+            <li>
+                <button type="button" class="btn btn-danger" onclick="window.location='valida.php';">
+                    Sair
+                </button>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 <div class="AbasControli">
     <div id="abas" style="background-color: #426bbf;">
-        <ul class="abas" style=" padding-top: 5px; padding-left: 5px;">
+        <ul class="abas" style="padding-top: 5px; padding-left: 5px;">
             <div class="w3-bar w3-black">
-
-                <div class="form-row">
+                <div class="form-row" style="margin-right: 1100">
                     <div class="form-group col-md-3" style="margin-right: 10px;">
-                        <form action="valida.php?acao=editar" method="post">
+                        <a href="valida.php?acao=home2"><button class="btn btn-primary" style="color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">Voltar</button></a>
+                    </div>
+                        <form action="valida.php?acao=editado" method="post">
                             <input type="hidden" name="cpfFun" value="<?php echo $usuarioAtivo?>">
-                            <button type="submit" class="btn btn-info" value="Editar" name="editar">Voltar</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Contato</button>
-                            <button type="button" class="btn btn-danger" onclick="window.location='valida.php';" value="sair" id="sair">Sair</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="color: #0600ff;border-color: #0600ff;background-color: #fff714!important;">Contato</button>
                         </form>
                     </div>
-                </div>
             </div>
 
             <!-- Button trigger modal -->
@@ -58,26 +76,30 @@
     </div>
 </div>
 
-<div class = "container" style="margin-top: 50px; position: absolute; left: 37%;">
-    <div class="wrapper">
-        <form action="valida.php?acao=editado" method="post" class="form-signin">
-            <h3 class="form-signin-heading">Alteração de Dados do Funcionário</h3>
+<div class = "container" style="margin-top: 30px; margin-bottom: 100px;">
+    <div class="row">
+        <form action="valida.php?acao=editado" method="post" class="col-md-4 offset-md-4">
+            <div class="card-header" style="background-color: rgb(255,247,20,0.6);">
+                <h4 style="text-align: center;">Alteração de Dados<br> do Funcionário</h4>
+            </div>
             <br>
             <input type="hidden" name="cpfFun" value="<?php echo $valores->getCpf()?>">
 
-            <input type="text" class="form-control col-3" name="nome" placeholder="Nome" value="<?php echo $valores->getNome()?>" required="" autofocus=""/>
-            <input type="email" class="form-control col-3" name="email" placeholder="E-mail" value="<?php echo $valores->getEmail()?>" required=""/>
-            <input type="number" class="form-control col-3" name="telefone" placeholder="Telefone" value="<?php echo $valores->getTelefone()?>" required=""/>
+            <input type="text" class="form-control input-sm chat-input" name="nome" placeholder="Nome" value="<?php echo $valores->getNome()?>" required="" autofocus=""/>
+            <input type="email" class="form-control input-sm chat-input" name="email" placeholder="E-mail" value="<?php echo $valores->getEmail()?>" required=""/>
+            <input type="number" class="form-control input-sm chat-input" name="telefone" placeholder="Telefone" value="<?php echo $valores->getTelefone()?>" required=""/>
             <br>
-            <input type="text" class="form-control col-3" name="login" placeholder="Usuário" value="<?php echo $valores->getLogin()?>" required=""/>
-            <input type="password" class="form-control col-3" name="senha" placeholder="Senha" value="<?php echo $valores->getSenha()?>" required=""/>
+            <input type="text" class="form-control input-sm chat-input" name="login" placeholder="Usuário" value="<?php echo $valores->getLogin()?>" required=""/>
+            <input type="password" class="form-control input-sm chat-input" name="senha" placeholder="Senha" value="<?php echo $valores->getSenha()?>" required=""/>
 
             <input type="hidden" name="idEdi" value="4">
             <br>
-            <button class="btn btn-lg btn-primary btn-block col-3"  name="editar" value="Editar" type="submit">Salvar</button>
+            <button class="btn btn-lg btn-primary btn-block col-12"  name="editar" value="Editar" type="submit">Salvar</button>
         </form>
     </div>
 </div>
+
+
 
 </body>
 </html>

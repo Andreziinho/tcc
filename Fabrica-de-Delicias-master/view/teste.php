@@ -1,51 +1,39 @@
-<div  id="fun" class = "conteudo" style="margin-top: 50px; position: absolute; left: 37%;">
-    <div class="wrapper">
-        <form action="valida.php?acao=cadastroFun" method="post" class="form-signin">
-            <h3 class="form-signin-heading">Cadastro de Funcionários</h3>
-            <br>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
 
-            <input type="text" class="form-control col-9" name="name" placeholder="Nome" >
-            <input type="email" class="form-control col-9" name="email" placeholder="E-mail" >
-            <input type="number" class="form-control col-9" name="telefone" placeholder="Telefone" >
-            <br>
-            <input type="text" class="form-control col-9" name="login" placeholder="Usuário" >
-            <input type="password" class="form-control col-9" name="senha" placeholder="Senha" >
 
-            <button class="btn btn-lg btn-primary btn-block col-9"  name="cadastro" value="Cadastrar" type="submit">Registrar</button>
-        </form>
+<!--Pulling Awesome Font -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card text-center card  bg-default mb-3">
+                <div class="card-header">
+                    LOGIN
+                </div>
+                <div class="card-body">
+                    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Username" />
+                    </br>
+                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Password" />
+                </div>
+                <div class="card-footer text-muted">
+                    <a href="#" class="btn btn-secondary">LOGIN</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div  id="sor" class = "conteudo" style="margin-top: 50px; position: absolute; left: 37%; display: none;">
-    <div class="wrapper">
-        <form action="valida.php?acao=cadastroSor" method="post" class="form-signin">
-            <h3 class="form-signin-heading">Cadastro de Funcionários</h3>
-            <br>
-            <input type="text" class="form-control col-9" name="nome" placeholder="Nome do Sorvete">
-            <input type="text" class="form-control col-9" name="sabor" placeholder="Sabor" />
-            <input type="number" class="form-control col-9" name="qtd" placeholder="Quantidade (Caixas)" />
-            <input type="number" class="form-control col-9" name="validade" placeholder="Validade (Ano)" />
-            <br>
-            <input type="number" class="form-control col-9" name="data_ent" placeholder="Data de Entrada (Ano)" />
-            <input type="text" class="form-control col-9" name="cpf" placeholder="Login" />
-            <input type="text" class="form-control col-9" name="cnpj" placeholder="Nome da Empresa" />
-            <br>
-            <button class="btn btn-lg btn-primary btn-block col-9"  name="cadastro" value="Cadastrar" type="submit">Inserir</button>
-        </form>
-    </div>
-</div>
-
-<div  id="for" class = "conteudo" style="margin-top: 50px; position: absolute; left: 37%; display: none;">
-    <div class="wrapper">
-        <form action="valida.php?acao=cadastroFor" method="post" class="form-signin">
-            <h3 class="form-signin-heading">Cadastro de Funcionários</h3>
-            <br>
-            <input type="number" class="form-control col-9" name="cnpj" placeholder="CNPJ">
-            <input type="text" class="form-control col-9" name="nome" placeholder="Nome da Empresa" />
-            <input type="email" class="form-control col-9" name="email" placeholder="E-mail" />
-            <input type="number" class="form-control col-9" name="telefone" placeholder="Telefone" />
-            <br>
-            <button class="btn btn-lg btn-primary btn-block col-9"  name="cadastro" value="Cadastrar" type="submit">Registrar</button>
-        </form>
-    </div>
-</div>
+</body>
+</html>

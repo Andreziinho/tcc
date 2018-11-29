@@ -6,30 +6,42 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" >
+    <style>
+        body{
+            background-image: url("img/body3.jpg");
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 
 <?php include "cab.php"; ?>
 
-<div class = "container" style="margin-top: 50px; position: absolute; left: 37%;">
-    <div class="wrapper">
-        <form action="valida.php?acao=editado" method="post" class="form-signin">
-            <h3 class="form-signin-heading">Alteração de Dados do Sorvete</h3>
-            <br>
+<div class = "container" style="margin-top: 30px; margin-bottom: 100px;">
+    <div class="row">
+        <form action="valida.php?acao=editado" method="post" class="col-md-4 offset-md-4">
+            <div class="card-header" style="background-color: rgb(255,247,20,0.6);">
+                <h4 style="text-align: center;">Alteração de Dados<br> do Sorvete</h4>
+            </div>            <br>
             <input type="hidden" name="id" value="<?php echo $valores->getId()?>">
 
-            <input type="text" class="form-control col-3" name="nome" placeholder="Nome" value="<?php echo $valores->getNome()?>" required="" autofocus=""/>
-            <input type="text" class="form-control col-3" name="sabor" placeholder="Sabor" value="<?php echo $valores->getSabor()?>" required=""/>
-            <input type="number" class="form-control col-3" name="qtd" placeholder="Quantidade" value="<?php echo $valores->getQuant()?>" required=""/>
+            <input type="text" class="form-control input-sm chat-input" name="nome" placeholder="Nome" value="<?php echo $valores->getNome()?>" required="" autofocus=""/>
+            <input type="text" class="form-control input-sm chat-input" name="sabor" placeholder="Sabor" value="<?php echo $valores->getSabor()?>" required=""/>
+            <input type="number" class="form-control input-sm chat-input" name="qtd" placeholder="Quantidade" value="<?php echo $valores->getQuant()?>" required=""/>
             <br>
-            <input type="number" class="form-control col-3" name="validade" placeholder="Validade" value="<?php echo $valores->getValidade()?>" required=""/>
-            <input type="number" class="form-control col-3" name="data_ent" placeholder="Data de Entrada" value="<?php echo $valores->getdataEnt()?>" required=""/>
-            <input type="text" class="form-control col-3" name="cpf" placeholder="Login" value="<?php echo $login?>" required=""/>
-            <input type="text" class="form-control col-3" name="cnpj" placeholder="Fornecedor" value="<?php echo $forNome?>" required=""/>
+            <input type="number" class="form-control input-sm chat-input" name="validade" placeholder="Validade" value="<?php echo $valores->getValidade()?>" required=""/>
+            <input type="number" class="form-control input-sm chat-input" name="data_ent" placeholder="Data de Entrada" value="<?php echo $valores->getdataEnt()?>" required=""/>
+            <input type="text" class="form-control input-sm chat-input" name="cpf" placeholder="Login" value="<?php echo $login?>" required=""/>
+            <input type="text" class="form-control input-sm chat-input" name="cnpj" placeholder="Fornecedor" value="<?php echo $forNome?>" required=""/>
 
             <input type="hidden" name="idEdi" value="3">
             <br>
-            <button class="btn btn-lg btn-primary btn-block col-3"  name="editar" value="Editar" type="submit">Salvar</button>
+            <button class="btn btn-lg btn-primary btn-block col-12"  name="editar" value="Editar" type="submit">Salvar</button>
         </form>
     </div>
 </div>

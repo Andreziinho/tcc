@@ -6,24 +6,37 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
         <link rel="stylesheet" href="../style.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" >
+        <style>
+            body{
+                background-image: url("img/body3.jpg");
+                background-size: 100%;
+            }
+        </style>
     </head>
     <body>
     <?php include "cab.php"; ?>
 
-    <div class = "container" style="margin-top: 50px; position: absolute; left: 37%;">
-        <div class="wrapper">
-            <form action="valida.php?acao=editado" method="post" class="form-signin">
-                <h3 class="form-signin-heading">Alteração de Dados do Fornecedor</h3>
+    <div class = "container" style="margin-top: 30px; margin-bottom: 100px;">
+        <div class="row">
+            <form action="valida.php?acao=editado" method="post" class="col-md-4 offset-md-4">
+                <div class="card-header" style="background-color: rgb(255,247,20,0.6);">
+                    <h4 style="text-align: center;">Alteração de Dados<br> do Fornecedor</h4>
+                </div>
                 <br>
                 <input type="hidden" name="cnpj" value="<?php echo $valores->getCnpj()?>">
 
-                <input type="text" class="form-control col-3" name="nome" placeholder="Nome" value="<?php echo $valores->getNome()?>" required="" autofocus=""/>
-                <input type="email" class="form-control col-3" name="email" placeholder="E-mail" value="<?php echo $valores->getEmail()?>" required=""/>
-                <input type="number" class="form-control col-3" name="telefone" placeholder="Telefone" value="<?php echo $valores->getTelefone()?>" required=""/>
+                <input type="text" class="form-control input-sm chat-input" name="nome" placeholder="Nome" value="<?php echo $valores->getNome()?>" required="" autofocus=""/>
+                <input type="email" class="form-control input-sm chat-input" name="email" placeholder="E-mail" value="<?php echo $valores->getEmail()?>" required=""/>
+                <input type="number" class="form-control input-sm chat-input" name="telefone" placeholder="Telefone" value="<?php echo $valores->getTelefone()?>" required=""/>
                 <br>
                 <input type="hidden" name="idEdi" value="2">
                 <br>
-                <button class="btn btn-lg btn-primary btn-block col-3"  name="editar" value="Editar" type="submit">Salvar</button>
+                <button class="btn btn-lg btn-primary btn-block col-12"  name="editar" value="Editar" type="submit">Salvar</button>
             </form>
         </div>
     </div>
